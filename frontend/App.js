@@ -11,19 +11,19 @@ export default function TodoApp() {
   }, []);
 
   const fetchTasks = async () => {
-    const response = await axios.get("http://localhost:5000/tasks");//in ec2 replace localhost with public ip of ec2
+    const response = await axios.get("http://13.233.23.137:5000/tasks");//in ec2 replace localhost with public ip of ec2
     setTasks(response.data);
   };
 
   const addTask = async () => {
     if (newTask.trim() === "") return;
-    await axios.post("http://localhost:5000/tasks", { task: newTask });
+    await axios.post("http://13.233.23.137 :5000/tasks", { task: newTask });
     setNewTask("");
     fetchTasks();
   };
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/tasks/${id}`);
+    await axios.delete(`http://13.233.23.137 :5000/tasks/${id}`);
     fetchTasks();
   };
 
