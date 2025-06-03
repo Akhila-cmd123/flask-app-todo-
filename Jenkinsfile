@@ -50,7 +50,7 @@ pipeline{
         ]]) {
             sh '''
             aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 124930444221.dkr.ecr.ap-south-1.amazonaws.com
-            docker tag akhila/repo-new:latest 124930444221.dkr.ecr.ap-south-1.amazonaws.com/akhila/repo-new:${BUILD_NUMBER}
+            docker tag back-app 124930444221.dkr.ecr.ap-south-1.amazonaws.com/akhila/repo-new:${BUILD_NUMBER}
             docker push 124930444221.dkr.ecr.ap-south-1.amazonaws.com/akhila/repo-new:${BUILD_NUMBER}
             '''
              }
